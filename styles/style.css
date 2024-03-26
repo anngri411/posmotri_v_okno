@@ -10,6 +10,7 @@ html {
 
 .page {
   display: flex;
+  justify-content: center;
   align-items: center;
   inline-size: 1200px;
   block-size: 100%;
@@ -115,7 +116,7 @@ ol {
   text-overflow: ellipsis; 
   white-space: nowrap; 
   overflow: hidden;
-  max-width: 399px;
+  max-width: 200px;
   color: #fff;
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
@@ -160,7 +161,7 @@ ol {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: end;
 }
 
 .search-form__fieldset {
@@ -168,7 +169,6 @@ ol {
   flex-direction: column;
   gap: 5px;
   border: none;
-  inline-size: 100%;
 }
 
 .search-form__fieldset-title {
@@ -185,13 +185,9 @@ ol {
   width: fit-content;
 }
 
-.search-form__label:hover {
+.search-form__label:hover > .search-form__label-text {
   text-decoration: underline 1px #fff;
   text-underline-offset: 5px;
-}
-
-.search-form__label:hover > .search-form__label-text {
-  text-decoration: underline;
 }
 
 .search-form__label:has(:focus-visible) {
@@ -231,16 +227,21 @@ ol {
 
 .search-form__checkbox-list {
   display: flex;
+  justify-content: center;
+  align-self: start;
+  margin-block-end: 5px; 
   gap: 15px;
 }
 
 .search-form__checkbox:checked+.search-form__pseudo-checkbox::after {
   content: '';
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1px;
   background-color: #fff;
-  inline-size: 15px;
-  block-size: 15px;
-  margin: 1px 0 0 1px;
+  width: 15px;
+  height: 15px; 
 }
 
 .search-form__pseudo-checkbox {
@@ -248,12 +249,9 @@ ol {
   align-items: center;
   justify-content: center;
   border: 1px solid #fff;
-  inline-size: 19px;
-  block-size: 19px;
-}
-
-.serch-form__submit-button {
-  align-self: flex-end;
+  width: 19px;
+  height: 19px;
+  margin: auto; 
 }
 
 /* button */
@@ -268,8 +266,6 @@ ol {
   text-align: center;
   background-color: transparent;
   cursor: pointer;
-  width: 100%;
-  height: 100%;
 }
 
 .button:active {
@@ -289,19 +285,25 @@ ol {
   outline-offset: 1px;
 }
 
+.search-form__submit-button {
+  width: 194px;
+}
+
 .more-button {
-  background-color: transparent;
+  width: 399px;
+  margin: 2px;
 }
 
 /* result */
 
 .result {
-  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .result__video {
-  width: 100%;
-  height: 100%;
+  inline-size: 100%;
   block-size: 100%;
   object-fit: cover;
   object-position: center;
@@ -309,6 +311,6 @@ ol {
 
 .result__video-container {
   position: relative;
-  inline-size: 711px;
-  margin: 0 0 11px;
+  width: 711px;
+  height: 386px;
 }
